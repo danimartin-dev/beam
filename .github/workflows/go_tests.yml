@@ -20,15 +20,16 @@
 name: Go tests
 
 on:
-  schedule:
-    - cron: '10 2 * * *'
-  push:
-    branches: ['master', 'release-*']
-    tags: 'v*'
-  pull_request:
-    branches: ['master', 'release-*']
-    tags: 'v*'
-    paths: ['sdks/go/pkg/**', 'sdks/go.mod', 'sdks/go.sum']
+#   schedule:
+#     - cron: '10 2 * * *'
+#   push:
+#     branches: ['master', 'release-*']
+#     tags: 'v*'
+#   pull_request:
+#     branches: ['master', 'release-*']
+#     tags: 'v*'
+#     paths: ['sdks/go/pkg/**', 'sdks/go.mod', 'sdks/go.sum']
+  workflow_dispatch:
 
 jobs:
   build:
