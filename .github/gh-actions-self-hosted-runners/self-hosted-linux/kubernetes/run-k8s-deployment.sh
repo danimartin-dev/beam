@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.
@@ -12,22 +14,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-# This workflow will triage pull requests and apply a label based on the
-# paths that are modified in the pull request.
-
-name: LabelPrs
-on: [pull_request_target]
-permissions: read-all
-jobs:
-  label:
-    runs-on: [self-hosted, ubuntu-20.04]
-    permissions:
-      contents: read
-      pull-requests: write
-    steps:
-    - uses: actions/labeler@v4
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        configuration-path: '.github/autolabeler.yml'
-        sync-labels: true # Remove labels when matching files are reverted
+kubectl apply -f github-actions-secrets.yml
+kubectl apply -f github-actions-deployment.yml
+kubectl apply -f github-actions-hpa.yml
+gcloud container clusters update  github-actions-linux-runners --enable-vertical-pod-autoscaling --zone us-central1-a
+kubectl apply -f github-actions-vpa.yml
