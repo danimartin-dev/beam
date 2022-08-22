@@ -29,6 +29,8 @@ on:
     branches: ['master', 'release-*']
     tags: ['v*']
     paths: ['sdks/go/pkg/**', 'sdks/go.mod', 'sdks/go.sum']
+  # Adding workflow_dispatch for testing purposes only.  
+  workflow_dispatch: 
 permissions: read-all
 jobs:
   build:

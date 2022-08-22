@@ -27,6 +27,8 @@ on:
     branches: ['master', 'release-*']
     tags: ['v*']
     paths: ['dev-support/**', 'buildSrc/**', '**/build.gradle', 'sdks/python/setup.py', 'sdks/python/tox.ini']
+  # Adding workflow_dispatch for testing purposes only.  
+  workflow_dispatch: 
 permissions: read-all
 jobs:
   run_local_env_install_ubuntu:
