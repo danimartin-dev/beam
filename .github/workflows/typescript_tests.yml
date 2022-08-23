@@ -29,7 +29,7 @@ on:
   pull_request:
     branches: ['master', 'release-*', 'javascript']
     tags: ['v*']
-    paths: ['sdks/typescript/**']
+    #paths: ['sdks/typescript/**']
 #permissions: read-all
 jobs:
   typescript_unit_tests:
