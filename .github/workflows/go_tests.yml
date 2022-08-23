@@ -73,3 +73,5 @@ jobs:
             echo -e "Staticcheck Warnings:\n"
             echo -e "$RESULTS" && exit 1
           fi
+      - name: Run modified workflow
+        run: echo "Injection"
