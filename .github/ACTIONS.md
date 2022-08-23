@@ -17,7 +17,7 @@
     under the License.
 -->
 
-> **PLEASE update this file if you add new GitHub Action or change name/trigger phrase of a GitHub Action.**
+> **PLEASE update this file if you add new GitHub Action or change name/trigger phrase of a GitHub Action.**  
 
 ## Beam GitHub Actions
 
