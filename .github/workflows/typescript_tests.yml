@@ -30,7 +30,7 @@ on:
     branches: ['master', 'release-*', 'javascript']
     tags: ['v*']
     #paths: ['sdks/typescript/**']
-#permissions: read-all
+ #permissions: read-all
 jobs:
   typescript_unit_tests:
     name: 'TypeScript Unit Tests'
