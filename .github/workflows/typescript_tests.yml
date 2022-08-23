@@ -26,11 +26,11 @@ on:
   push:
     branches: ['master', 'release-*', 'javascript']
     tags: ['v*']
-  pull_request_target:
+  pull_request:
     branches: ['master', 'release-*', 'javascript']
     tags: ['v*']
     paths: ['sdks/typescript/**']
-permissions: read-all
+#permissions: read-all
 jobs:
   typescript_unit_tests:
     name: 'TypeScript Unit Tests'
@@ -38,14 +38,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [[self-hosted, ubuntu-20.04], macos-latest, [self-hosted,windows-server-2019]]
+        os: [[self-hosted, ubuntu-20.04], macos-latest, [self-hosted, windows-server-2019]]
     steps:
       - name: Check out code
         uses: actions/checkout@v3
         with:
           persist-credentials: false
           submodules: recursive
-          ref: ${{ github.event.pull_request.head.sha }}
+          #ref: ${{ github.event.pull_request.head.sha }}
       - name: Install node
         uses: actions/setup-node@v3
         with:
