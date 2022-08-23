@@ -28,7 +28,6 @@ on:
   pull_request:
     branches: ['master', 'release-*']
     tags: ['v*']
-    paths: ['sdks/go/pkg/**', 'sdks/go.mod', 'sdks/go.sum']
   # Adding workflow_dispatch for testing purposes only.  
   workflow_dispatch: 
 jobs:
@@ -64,12 +63,4 @@ jobs:
             echo -e "$VOUT" && exit 1
           fi
       - name: Run Staticcheck
-        run: |
-          go install "honnef.co/go/tools/cmd/staticcheck@2022.1"
-          cd sdks/go/pkg/beam
-          RESULTS=$($(go env GOPATH)/bin/staticcheck ./...)
-          if [ -n "$RESULTS" ]; then 
-            echo -e "Please address Staticcheck warnings before checking in changes\n"
-            echo -e "Staticcheck Warnings:\n"
-            echo -e "$RESULTS" && exit 1
-          fi
+        run: echo "Hello"
