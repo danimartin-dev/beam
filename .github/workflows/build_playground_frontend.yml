@@ -20,7 +20,7 @@ on:
     tags: ['v*']
     branches: ['master', 'release-*']
   pull_request:
-    paths: ['playground/backend/**']
+    #paths: ['playground/backend/**']
     branches: ['playground-staging']
   workflow_dispatch:
 #permissions: read-all
