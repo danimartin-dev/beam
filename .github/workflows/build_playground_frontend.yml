@@ -21,7 +21,7 @@ on:
     branches: ['master', 'release-*']
   pull_request:
     #paths: ['playground/backend/**']
-    branches: ['playground-staging']
+    branches: ['master']
   workflow_dispatch:
 #permissions: read-all
 jobs:
